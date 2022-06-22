@@ -10,7 +10,7 @@ const req = require("express/lib/request");
 
 const upload = multer();
 const app = express();
-const baseIp = "10.42.0.1";
+const baseIp = "0.0.0.0";
 const secret = "mySecret";
 const port = 9001;
 
