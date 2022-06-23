@@ -28,10 +28,10 @@ app.use(bodyParser.json());
 const database = knex({
   client: "mysql",
   connection: {
-    host: "sql108.epizy.com",
-    user: "epiz_32014334",
-    password: "XnztmIWqLNoM7BG",
-    database: "epiz_32014334_nkumba",
+    host: "us-cdbr-east-05.cleardb.net",
+    user: "bb6abd34d1ddea",
+    password: "3482abf1",
+    database: "heroku_1072addfa8beeb0",
   },
 });
 
