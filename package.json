@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon nkumbaServer.js"
+    "start": "node nkumbaServer.js"
   },
   "author": "",
   "license": "ISC",
