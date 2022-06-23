@@ -12,7 +12,7 @@ const upload = multer();
 const app = express();
 const baseIp = "0.0.0.0";
 const secret = "mySecret";
-const port = 9001;
+const port = process.env.PORT ? process.env.PORT : 3000;
 
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
