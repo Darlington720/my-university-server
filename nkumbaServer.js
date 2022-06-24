@@ -195,7 +195,7 @@ app.get("/student/:studentNo", (req, res) => {
                 data3[0],
                 {
                   todaysStatus: true,
-                  imageUrl: `http://${baseIp}:${port}/assets/${data3[0].image}`,
+                  imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${data3[0].image}`,
                 },
               ]);
             }
@@ -213,8 +213,8 @@ app.get("/student/:studentNo", (req, res) => {
               {
                 todaysStatus: false,
                 imageUrl: data2[0]
-                  ? `http://${baseIp}:${port}/assets/${data2[0].image}`
-                  : "http://${baseIp}:${port}/assets/jacket.jpg",
+                  ? `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`
+                  : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
               },
             ]);
           });
@@ -341,7 +341,7 @@ app.post("/api/login", (req, res) => {
       } else {
         return res.send({
           ...user[0],
-          imageUrl: `http://${baseIp}:${port}/assets/${user[0].image}`,
+          imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/assets/${user[0].image}`,
         });
       }
       // const token = jwt.sign(
