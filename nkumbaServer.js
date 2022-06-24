@@ -341,7 +341,7 @@ app.post("/api/login", (req, res) => {
       } else {
         return res.send({
           ...user[0],
-          imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/assets/${user[0].image}`,
+          imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${user[0].image}`,
         });
       }
       // const token = jwt.sign(
