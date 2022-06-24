@@ -363,6 +363,8 @@ app.post("/api/login", (req, res) => {
 
 app.post("/api/addVisitor", (req, res) => {
   const { full_name, reason, office, signed_in_by } = req.body;
+  const d = new Date();
+  const date = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   console.log(req.body);
   database("visitors")
     .insert({
@@ -370,6 +372,7 @@ app.post("/api/addVisitor", (req, res) => {
       reason,
       office,
       signed_in_by,
+      date,
     })
     .then((data) => res.status(200).send("Received the data"))
     .catch((err) => res.status(400).send("Failed to send the data " + err));
