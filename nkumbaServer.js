@@ -191,11 +191,15 @@ app.get("/student/:studentNo", (req, res) => {
             if (data3[0].sign_out !== null) {
               res.send("Already registered");
             } else {
+              const img = `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`;
               res.send([
                 data3[0],
                 {
                   todaysStatus: true,
                   imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${data3[0].image}`,
+                  thumbNailUrl: data2[0]
+                    ? `https://res.cloudinary.com/qrcode-scanner/image/upload/c_thumb,g_auto,h_1024,w_1024/${img}`
+                    : `https://res.cloudinary.com/qrcode-scanner/image/upload/c_thumb,g_auto,h_1024,w_1024/jacket.jpg`,
                 },
               ]);
             }
@@ -208,6 +212,7 @@ app.get("/student/:studentNo", (req, res) => {
             stu_id: studentNo,
           })
           .then((data2) => {
+            const img = `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`;
             res.send([
               ...data2,
               {
@@ -215,6 +220,9 @@ app.get("/student/:studentNo", (req, res) => {
                 imageUrl: data2[0]
                   ? `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`
                   : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
+                thumbNailUrl: data2[0]
+                  ? `https://res.cloudinary.com/qrcode-scanner/image/upload/c_thumb,g_auto,h_1024,w_1024/${img}`
+                  : `https://res.cloudinary.com/qrcode-scanner/image/upload/c_thumb,g_auto,h_1024,w_1024/jacket.jpg`,
               },
             ]);
           });
@@ -335,6 +343,7 @@ app.post("/api/login", (req, res) => {
     })
     .from("users")
     .then((user) => {
+      const img = `https://floating-retreat-56097.herokuapp.com/assets/${user[0].image}`;
       console.log(user);
       if (!user[0]) {
         return res.status(400).json({ error: "Invalid email or password " });
@@ -342,6 +351,9 @@ app.post("/api/login", (req, res) => {
         return res.send({
           ...user[0],
           imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${user[0].image}`,
+          thumbNailUrl: data2[0]
+            ? `https://res.cloudinary.com/qrcode-scanner/image/upload/c_thumb,g_auto,h_1024,w_1024/${img}`
+            : `https://res.cloudinary.com/qrcode-scanner/image/upload/c_thumb,g_auto,h_1024,w_1024/jacket.jpg`,
         });
       }
       // const token = jwt.sign(
