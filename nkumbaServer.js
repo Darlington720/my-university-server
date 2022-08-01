@@ -596,8 +596,8 @@ app.post("/allstudentdetails/", (req, res) => {
             ...data3,
             {
               imageUrl: data3[0]
-                ? `http://${baseIp}:${port}/assets/${data3[0].image}`
-                : "http://${baseIp}:${port}/assets/jacket.jpg",
+                ? `https://floating-retreat-56097.herokuapp.com/assets/${data3[0].image}`
+                : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
             },
           ]);
 
@@ -707,8 +707,8 @@ app.get("/allstudentdetails/:studentNo", (req, res) => {
             ...data3,
             {
               imageUrl: data3[0]
-                ? `http://${baseIp}:${port}/assets/${data3[0].image}`
-                : "http://${baseIp}:${port}/assets/jacket.jpg",
+                ? `https://floating-retreat-56097.herokuapp.com/assets/${data3[0].image}`
+                : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
             },
           ]);
 
@@ -833,8 +833,8 @@ app.get("/student/:studentNo", (req, res) => {
                         {
                           todaysStatus: "not new",
                           imageUrl: data2[0]
-                            ? `http://${baseIp}:${port}/assets/${data2[0].image}`
-                            : "http://${baseIp}:${port}/assets/jacket.jpg",
+                            ? `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`
+                            : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
                           requiredPercentage: data6[0].c_percentage,
                         },
                       ]);
@@ -849,7 +849,7 @@ app.get("/student/:studentNo", (req, res) => {
                     data3[data3.length - 1],
                     {
                       todaysStatus: true,
-                      imageUrl: `http://${baseIp}:${port}/assets/${data3[0].image}`,
+                      imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${data3[0].image}`,
                       requiredPercentage: data6[0].c_percentage,
                     },
                   ]);
@@ -916,8 +916,8 @@ app.get("/student/:studentNo", (req, res) => {
                                 {
                                   todaysStatus: false,
                                   imageUrl: data2[0]
-                                    ? `http://${baseIp}:${port}/assets/${data2[0].image}`
-                                    : "http://${baseIp}:${port}/assets/jacket.jpg",
+                                    ? `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`
+                                    : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
                                   feesStructure: data4,
                                   paid: data5,
                                   percentage:
@@ -943,8 +943,8 @@ app.get("/student/:studentNo", (req, res) => {
                     {
                       todaysStatus: false,
                       imageUrl: data2[0]
-                        ? `http://${baseIp}:${port}/assets/${data2[0].image}`
-                        : "http://${baseIp}:${port}/assets/jacket.jpg",
+                        ? `https://floating-retreat-56097.herokuapp.com/assets/${data2[0].image}`
+                        : "https://floating-retreat-56097.herokuapp.com/assets/jacket.jpg",
                     },
                   ]);
                 }
@@ -1238,7 +1238,7 @@ app.post("/api/login", (req, res) => {
                   return res.send({
                     ...user[0],
                     otherData: studentData,
-                    imageUrl: `http://${baseIp}:${port}/assets/${user[0].user_image}`,
+                    imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${user[0].user_image}`,
                     studentCourseUnits: courseUnitsData,
                   });
                 });
@@ -1246,7 +1246,7 @@ app.post("/api/login", (req, res) => {
         } else {
           return res.send({
             ...user[0],
-            imageUrl: `http://${baseIp}:${port}/assets/${user[0].user_image}`,
+            imageUrl: `https://floating-retreat-56097.herokuapp.com/assets/${user[0].user_image}`,
           });
         }
       }
